@@ -12,7 +12,7 @@ function bs() {
   // [serveSass(), compress()];
   serveSass()
   browserSync.init({
-      proxy: 'webStart.loc',
+      proxy: 'Summer.loc',
   });
   watch("./*.html").on('change', browserSync.reload);
   watch("./sass/**/*.sass", serveSass);

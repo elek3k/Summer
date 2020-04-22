@@ -1,44 +1,19 @@
 {
-  "name": "web_start",
+  "name": "summer",
   "version": "1.0.0",
-  "description": "My training for creating web sites",
-  "main": "index.js",
+  "description": "fitness-clubs",
+  "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/elek3k/Web_Start.git"
+    "url": "git+https://github.com/elek3k/Summer.git"
   },
-  "browserslist": [
-    "> 1%",
-    "ie >= 11",
-    "edge >= 15",
-    "ie_mob >= 10",
-    "ff >= 45",
-    "chrome >= 45",
-    "safari >= 7",
-    "opera >= 23",
-    "ios >= 7",
-    "android >= 4",
-    "bb >= 10"
-  ],
-  "author": "",
+  "author": "Valerii",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/elek3k/Web_Start/issues"
+    "url": "https://github.com/elek3k/Summer/issues"
   },
-  "homepage": "https://github.com/elek3k/Web_Start#readme",
-  "devDependencies": {
-    "browser-sync": "^2.26.7",
-    "gulp": "^4.0.2"
-  },
-  "dependencies": {
-    "gulp-autoprefixer": "^7.0.1",
-    "gulp-htmlmin": "^5.0.1",
-    "gulp-minify": "^3.1.0",
-    "gulp-rename": "^2.0.0",
-    "gulp-sass": "^4.0.2",
-    "sass": "^1.26.3"
-  }
+  "homepage": "https://github.com/elek3k/Summer#readme"
 }
