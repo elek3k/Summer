@@ -1,0 +1,85 @@
+.header
+  background: url(../img/header/header-bg.png) no-repeat center / cover
+  &__options
+    display: flex
+    justify-content: space-between
+    align-items: center
+    height: 6.785rem
+  &__list-clubs
+    position: relative
+    min-width: 12.857rem
+    height: 3.214rem
+    padding-top: 0.9rem
+    padding-left: 4rem
+    border: 1px solid $mainColor
+    border-radius: 1.671rem
+    background: url(../img/header/pointer.png) no-repeat 2rem center / 1.071rem 0.428rem
+    cursor: pointer
+    .club-address
+      visibility: hidden
+      position: absolute
+      left: -1px
+      top: 3.15rem
+      padding: 2.285rem
+      padding-left: 3.928rem
+      border-radius: 5px
+      border-top-left-radius: 0
+      display: flex
+      flex-direction: column
+      width: 21rem
+      background-color: $mainColor
+      input[type=checkbox]
+        position: absolute
+        appearance: none
+      .wrap
+        position: relative
+      .check__box
+        position: absolute
+        margin-left: -2rem
+        width: 21px
+        height: 21px
+        border: 1px solid #d1ab15
+        border-radius: 5px
+        background-color: #fff
+      input[type=checkbox]:hover + span
+        background: #fff url(../img/header/check.png) no-repeat center / 0.8rem
+      a
+        text-decoration: none
+        text-transform: none
+        color: $black
+  &__list-text
+    font-size: 0.857rem
+    font-weight: bold
+    text-transform: uppercase
+    color: $mainColor
+  .open
+    border-radius:  1.671rem 1.671rem 0 0
+    background: $mainColor url(../img/header/pointer-black.png) no-repeat 2rem center / 1.071rem 0.428rem
+    span
+      color: $black
+  .record
+    &__button
+      padding-left: 3rem
+      text-align: left
+      border: none
+      background-color: transparent
+      color: $light
+      font-weight: bold
+      cursor: pointer
+      background: url(../img/header/visit.png) no-repeat left center / 2rem
+      font-size: 1.285rem
+  &__call
+    color: $light
+    font-size: 0.857rem
+    .number
+      display: block
+    a
+      color: $light
+      text-decoration: none
+      font-size: 1.357rem
+    p
+      margin: 0
+  button
+    display: block
+    
+    

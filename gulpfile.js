@@ -9,8 +9,9 @@ const htmlmin = require('gulp-htmlmin');
 
 // Static server
 function bs() {
-  // [serveSass(), compress()];
-  serveSass()
+  // [serveSass(), build()];
+  serveSass(),
+  
   browserSync.init({
       proxy: 'summer.loc',
   });
