@@ -1,9 +1,11 @@
 .header
-  background: url(../img/header/header-bg.png) no-repeat center / cover
+  .row1
+    background: url(../img/header/header-bg.png) no-repeat center / cover
   &__options
     display: flex
     justify-content: space-between
     align-items: center
+    flex-wrap: wrap
     height: 6.785rem
   &__list-clubs
     position: relative
@@ -66,7 +68,7 @@
       color: $light
       font-weight: bold
       cursor: pointer
-      background: url(../img/header/visit.png) no-repeat left center / 2rem
+      background: url(../img/header/visit.png) no-repeat left center / 2.3rem
       font-size: 1.285rem
   &__call
     color: $light
@@ -77,9 +79,29 @@
       color: $light
       text-decoration: none
       font-size: 1.357rem
+      font-weight: bold
     p
       margin: 0
+      font-weight: lighter
   button
     display: block
-    
-    
+  
+  .row2
+    background: black linear-gradient( 45deg, rgb(35,10,22) 0%, rgb(12,11,21) 100%);
+  &__nav
+    display: flex
+    justify-content: space-between
+    margin: 0
+    padding: 1.785rem 0
+    list-style: none
+    .nav__item
+      border-right: 1px dotted rgba($light, 0.3)
+      padding-right: 2.5rem
+      &:last-of-type
+        border-right: none
+        padding-right: 0
+      &:first-of-type
+
+    .nav__link
+      color: $light
+      text-transform: uppercase
