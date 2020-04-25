@@ -9,7 +9,7 @@ $(document).ready(function () {
       disableOnInteraction: false,
     },
     pagination: {
-      el: '.custom-pagination',
+      el: '.hero-pagination',
       clickable: true,
       renderBullet: function (index, className) {
         return '<span class="' + className + '">' + '</span>';
@@ -26,8 +26,25 @@ $(document).ready(function () {
     spaceBetween: 30,
     // Navigation arrows
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+      nextEl: '.services__prev',
+      prevEl: '.services__next',
+    },
+  })
+
+  // инициализация 3 слайдера
+  var mySwiper = new Swiper ('.gallery__swiper', {
+    // Optional parameters
+    loop: true,
+
+    // If we need pagination
+    pagination: {
+      el: '.gallery__pagination',
+    },
+
+    // Navigation arrows
+    navigation: {
+      nextEl: '.gallery__next',
+      prevEl: '.gallery__prev',
     },
   })
 
