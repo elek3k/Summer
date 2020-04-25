@@ -58,7 +58,7 @@
           <!-- /.header__list-clubs -->
 
           <div class="header__record record">
-            <button class="button record__button">Записаться на <br>бесплатный визит</button>
+            <button class="button  record__button">Записаться на <br>бесплатный визит</button>
           </div>
           <!-- /.header__record record -->
 
@@ -68,7 +68,7 @@
               <a class="link" href="tel:74952660278">+7 (495) 266 02 78</a>
             </div>
           </div>
-          <button class="button button-callback">перезвоните мне</button>
+          <button class="button button--main button-callback">перезвоните мне</button>
           <!-- /.header__call call -->
 
 
@@ -167,16 +167,64 @@
 
     <section class="clubs">
       <div class="container">
-        <h2 class="title clubs__title">выберите свой клуб</h2>
+        <h2 class="title clubs__title title--before">выберите свой клуб</h2>
         <!-- /.title clubs-list__title -->
-
+        <div class="clubs__list">
+          <a href="#" class="first">
+            <div class="clubs__item">
+              <div class="clubs__img">
+                <picture>
+                  <img src="img/clubs/club1.jpg" alt="Клуб 'Лето' в ТРЦ 'Мозаика'">
+                </picture>
+              </div>
+              <div class="clubs__address">
+                <strong>"Лето" в ТРЦ "Мозаика"</strong>
+                <span>Россия, Москва, 7-я Кажуховская ул.9</span>
+              </div>
+            </div>
+          </a>
+          <a href="#">
+            <div class="clubs__item">
+              <div class="clubs__img">
+                <picture>
+                  <img src="img/clubs/club2.jpg" alt="Клуб 'Лето' в БЦ Спиртзавод">
+                </picture>
+              </div>
+              <div class="clubs__address">
+                <strong>"Лето" в БЦ Спитзавод</strong>
+                <span>Россия, г. Щелково, ул. Советская, д.16</span>
+              </div>
+            </div>
+          </a>
+        </div>
+        <!-- /.clubs__row -->
         
       </div>
       <!-- /.container -->
     </section>
     <!-- /.clubs-list -->
 
-
+    <section class="register">
+      <div class="container">
+        <h2 class="title title--light">записаться на бесплатный визит</h2>
+        <!-- /.title title--light -->
+        <form action="POST" class="form register__form">
+          <div class="input-group register__input-group">
+            <input type="text" class="input register__input" name="name" id="register-name" placeholder="Ваше имя...">
+          </div>
+          <div class="input-group register__input-group">
+            <input type="tel" class="input register__input" name="tel" id="register-tel" placeholder="Ваш номер телефона...">
+          </div>
+          <button class="button button--main">записаться</button>
+          <div class="policy register__policy">
+            <input type="checkbox" id="register-checkbox" class="checkbox register__checkbox">
+            <label class="label register__label" for="register-checkbox">я согласен на обработку персональных данных</label>
+          </div>
+        </form>
+      </section>
+      <!-- /.register -->
+      </div>
+      <!-- /.container -->
   
   </main>
 
