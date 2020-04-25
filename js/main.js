@@ -18,12 +18,25 @@ $(document).ready(function () {
 
   })
 
+  // инициализация 2 слайдера
+  var mySwiper = new Swiper ('.services__swiper', {
+    // Optional parameters
+    loop: true,
+    slidesPerView: 5,
+    spaceBetween: 30,
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  })
+
   // resize
   $(function(){
-    $('.swiper-slide').height($('.swiper-slide').width()/2.3);
+    $('.resize-slide').height($('.resize-slide').width()/2.3);
   
     $(window).resize(function(){
-      $('.swiper-slide').height($('.swiper-slide').width()/2.3);
+      $('.resize-slide').height($('.resize-slide').width()/2.3);
     });
   });
 
