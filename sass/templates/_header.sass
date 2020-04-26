@@ -30,6 +30,7 @@
       flex-direction: column
       width: 21rem
       background-color: $mainColor
+      z-index: 2
       input[type=checkbox]
         position: absolute
         appearance: none
@@ -70,19 +71,6 @@
       cursor: pointer
       background: url(../img/header/visit.png) no-repeat left center / 2.3rem
       font-size: 1.285rem
-  &__call
-    color: $light
-    font-size: 0.857rem
-    .number
-      display: block
-    a
-      color: $light
-      text-decoration: none
-      font-size: 1.357rem
-      font-weight: bold
-    p
-      margin: 0
-      font-weight: lighter
   button
     display: block
   
@@ -100,8 +88,6 @@
       &:last-of-type
         border-right: none
         padding-right: 0
-      &:first-of-type
-
     .nav__link
       color: $light
       text-transform: uppercase

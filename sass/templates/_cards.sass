@@ -9,6 +9,8 @@
   &__form
     .list-clubs__wrap
       margin-bottom: 1.5rem
+      input[type=checkbox]:checked + label > .custom-check
+        border-color: $mainColor
     .choice
       &-duration
         margin-bottom: 2rem
@@ -24,6 +26,8 @@
           color: rgba($text, 0.6)
           border: 1px solid #b7b7b7
           border-radius: 1.714rem
+          &:hover
+            cursor: pointer
         .active
           background-color: $mainColor
           border: 1px solid $mainColor

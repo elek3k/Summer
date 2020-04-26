@@ -68,6 +68,10 @@
     position: absolute
     height: 0
     width: 0
+  a
+    text-decoration: none
+  label
+    cursor: pointer
   .custom-check
     position: absolute
     margin-left: -2rem
@@ -83,3 +87,71 @@
     text-transform: uppercase
     strong
       display: block
+.call
+  color: $light
+  font-size: 0.857rem
+  &__link
+    color: $light
+    text-decoration: none
+    font-size: 1.357rem
+    font-weight: bold
+  &__text
+    margin: 0
+    font-weight: lighter
+.modal
+  opacity: 0
+  visibility: hidden
+  position: fixed
+  left: 0
+  top: 0
+  bottom: 0
+  right: 0
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 100%
+  height: 100%
+  background-color: rgba($black, 0.6)
+  z-index: 99
+  &__dialog
+    background-color: $modal
+    position: relative
+    z-index: 199
+  &__close
+    position: absolute
+    top: -1.35rem
+    right: -1.35rem
+    padding: 0
+    width: 1.3rem
+    height: 1.3rem
+    border: none
+    background: transparent url(../img/modal/close-btn.png) no-repeat center
+    cursor: pointer
+  &__title
+    background-color: $mainColor
+    margin: 0
+    padding: 1.5rem
+    font-size: 1.3rem
+    font-weight: bold
+  &__form
+    padding: 1.857rem 2.571rem
+  .input-group
+    display: flex
+    flex-direction: column
+    align-items: center
+  &__input
+    margin-bottom: 1rem
+    width: 100%
+    width: 19.142rem
+    &::placeholder
+      font-size: 0.928rem
+  &__policy
+    margin: auto
+    margin-bottom: 1.357rem
+    max-width: 10.714rem
+    label
+      font-size: 0.785rem
+      color: $light
+  &__button
+    display: block
+    margin: auto

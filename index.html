@@ -20,21 +20,21 @@
         <div class="header__options options">
 
           <div class="header__logo logo">
-            <a class="logo__link link" href="#">
-              <img src="img/header/logo.png" alt="">
+            <a class="logo__link link" href="/">
+              <img src="img/logo.png" alt="">
             </a>
           </div>
           <!-- /.header__logo logo -->
 
           <div class="header__list-clubs">
             <span class="header__list-text">выбрать клуб</span>
-            <div class="club-address">
+            <div class="club-address visible">
         
               <div class="wrap">
                 <input type="checkbox" id="mozaika">
                 <span class="check__box"></span>
                   <label for="mozaika">
-                    <a href="#">
+                    <a href="/">
                       <strong>Лето-«Мозаика»</strong>
                       <span>г. Москва, 7-я Кожуховская ул., 9</span>
                     </a>
@@ -45,7 +45,7 @@
                 <input type="checkbox" id="schelkovo">
                 <span class="check__box"></span>
                 <label for="schelkovo">
-                  <a href="#">
+                  <a href="/">
                     <strong>Лето-«Щелково»</strong>
                     <span>г. Щелково, ул. Советская, д. 16</span>
                   </a>
@@ -64,8 +64,8 @@
 
           <div class="header__call call">
             <div class="number">
-              <p>Звоните круглосуточно!</p>
-              <a class="link" href="tel:74952660278">+7 (495) 266 02 78</a>
+              <p class="call__text">Звоните круглосуточно!</p>
+              <a class="link call__link" href="tel:74952660278">+7 (495) 266 02 78</a>
             </div>
           </div>
           <button class="button button--main button-callback">перезвоните мне</button>
@@ -397,8 +397,116 @@
   </main>
 
   <footer class="footer">
-    
+    <div class="container">
+      <div class="footer__row">
+        <div class="footer__logo">
+          <a href="/"><img src="img/logo.png" alt="лето сеть клубов"></a>
+        </div>
+        <div class="footer__box">
+          <ul class="footer__list">
+            <li>«Лето»</li>
+            <li><a href="#">Клубы</a></li>
+            <li><a href="#">Новости</a></li>
+            <li><a href="#">Акции</a></li>
+            <li><a href="#">Фотогалерея</a></li>
+            <li><a href="#">Наши контакты</a></li>
+          </ul>
+        </div>
+        <div class="footer__box">
+          <ul class="footer__list">
+            <li>Клиентам</li>
+            <li><a href="#">Клубные карты</a></li>
+            <li><a href="#">Расписание</a></li>
+            <li><a href="#">Услуги</a></li>
+            <li><a href="#">Тренеры</a></li>
+          </ul>
+        </div>
+        <div class="list-clubs__wrap">
+          <span class="list-clubs__title">Выбрать клуб</span>
+          <div class="choice-address cards__choice-address">
+            <input  class="input choice-address__input" type="checkbox" id="footer-mozaika">
+            <label for="footer-mozaika">                
+              <a href="#">
+                <span class="custom-check choice-address__custom-check"></span>
+                  <strong>Лето-«Мозаика»</strong>
+                  <span class="list-clubs__address">г. Москва, 7-я Кожуховская ул., 9</span>
+              </a>
+            </label>
+          </div>
+            
+          <div class="choice-address cards__choice-address">
+            <input  class="input choice-address-input" type="checkbox" id="footer-schelkovo">
+            <label for="footer-schelkovo">
+              <a href="#">
+                <span class="custom-check choice-address__custom-check"></span>
+                  <strong>Лето-«Щелково»</strong>
+                  <span class="list-clubs__address">г. Щелково, ул. Советская, д. 16</span>
+              </a>
+            </label>
+          </div>
+        </div>
+        <div class="footer__call call">
+          <div class="number">
+            <p class="call__text">Единый телефон</p>
+            <a class="link call__link" href="tel:74952660278">+7 (495) 266 02 78</a>
+          </div>
+          <button class="button button--main button-callback">перезвоните мне</button>
+        </div>
+      </div>
+      <!-- /.footer__row -->
+    </div>
+    <!-- /.container -->
+    <div class="container container--big">
+z
+    </div>
   </footer>
+  <!-- /.footer -->
+
+  <div class="modal modal__visit">
+    <div class="modal__dialog">
+      <button class="modal__close modal__visit-close"></button>
+      <h2 class="modal__title title ">обратный звонок</h2>
+      <form action="#" class="modal__form">
+        <div class="input-group">
+          <input type="text" class="input modal__input" placeholder="Ваше имя...">
+          <input type="tel" class="input modal__input" placeholder="Ваш номер телефона...">
+        </div>
+        <div class="policy modal__policy">
+          <div class="list-clubs__wrap">
+            <input type="checkbox" id="visit-checkbox" class="checkbox cards__checkbox" checked>
+            <label class="label cards__label" for="visit-checkbox"><span class="custom-check choice-address__custom-check"></span>я согласен на обработку персональных данных</label>
+          </div>
+        </div>
+        <button class="button button--main modal__button">перезвоните мне</button>
+      </form>
+      <!-- /.modal__form -->
+    </div>
+    <!-- /.modal__dialog -->
+  </div>
+  <!-- /.modal visit -->
+
+  <div class="modal modal__callback">
+    <div class="modal__dialog">
+      <button class="modal__close modal__callback-close"></button>
+      <h2 class="modal__title title ">записаться на визит</h2>
+      <form action="#" class="modal__form">
+        <div class="input-group">
+          <input type="text" class="input modal__input" placeholder="Ваше имя...">
+          <input type="tel" class="input modal__input" placeholder="Ваш номер телефона...">
+        </div>
+        <div class="policy modal__policy">
+          <div class="list-clubs__wrap">
+            <input type="checkbox" id="callback-checkbox" class="checkbox cards__checkbox" checked>
+            <label class="label cards__label" for="callback-checkbox"><span class="custom-check choice-address__custom-check"></span>я согласен на обработку персональных данных</label>
+          </div>
+        </div>
+        <button class="button button--main modal__button">записаться</button>
+      </form>
+      <!-- /.modal__form -->
+    </div>
+    <!-- /.modal__dialog -->
+  </div>
+  <!-- /.modal callback -->
  
 
   <!-- jquery -->

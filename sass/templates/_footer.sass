@@ -1,0 +1,48 @@
+.footer
+  padding-top: 3.928rem
+  padding-bottom: 2.928rem
+  background-color: $footer
+  .container
+    &--big
+      height: 9.187rem
+      border-top: 1px solid #5e5d69
+  &__row
+    display: flex
+    justify-content: space-between
+    .list-clubs
+      &__wrap
+        a
+          color: $light
+        input[type=checkbox]
+          border-color: $light
+        input[type=checkbox]:hover + label > a > .custom-check
+          background: $mainColor url(../img/header/check.png) no-repeat center / 0.8rem
+          border-color: $mainColor
+      &__title
+        display: inline-block
+        margin-bottom: 0.5rem
+        font-size: 1.142rem
+        font-weight: bold
+        color: $mainColor
+      &__address
+        font-weight: lighter
+  &__list
+    margin: 0
+    list-style: none
+    li
+      margin-bottom: 0.6rem
+      &:first-of-type
+        font-size: 1.142rem
+        font-weight: bold
+        color: $mainColor
+    a
+      text-decoration: none
+      font-weight: lighter
+      color: $light
+  &__call
+    .call
+      &__text
+        margin-bottom: 0.5rem
+        text-align: right
+    .number
+      margin-bottom: 0.9rem
