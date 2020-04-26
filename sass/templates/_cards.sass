@@ -1,0 +1,67 @@
+.cards
+  padding-top: 2rem
+  padding-bottom: 3rem
+  &__title
+    margin-bottom: 4rem
+  &__row
+    display: flex
+    justify-content: space-between
+  &__form
+    .list-clubs__wrap
+      margin-bottom: 1.5rem
+    .choice
+      &-duration
+        margin-bottom: 2rem
+        label
+          display: inline-block
+          width: 8.571rem
+          height: 3.214rem
+          text-align: center
+          vertical-align: middle
+          font-size: 0.857rem
+          text-transform: uppercase
+          line-height: 3.214rem
+          color: rgba($text, 0.6)
+          border: 1px solid #b7b7b7
+          border-radius: 1.714rem
+        .active
+          background-color: $mainColor
+          border: 1px solid $mainColor
+          color: $text
+      &__input
+        display: none
+      &-address
+        padding-left: 2rem
+        label
+          span
+            font-weight: lighter
+    .input-wrap
+      position: relative
+      margin-bottom: 0.9rem
+      label
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+        left: 2rem
+        font-weight: lighter
+        color: rgba($text, 0.6)
+        span
+          color: rgba($mainColor, 1)
+  &__input
+    position: relative
+    border: 1px solid #b7b7b7
+    width: 100%
+  &__policy
+    margin-top: 1.5rem
+    margin-bottom: 1.5rem
+    label
+      display: flex
+      align-items: center
+      padding-left: 2rem
+      color: rgba($text, 0.6)
+      font-size: 0.785rem
+  .form__button
+    float: right
+
+      
+

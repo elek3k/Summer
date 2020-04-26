@@ -52,10 +52,34 @@
 .swiper-pagination-bullet
   width: 1.571rem
   height: 0.285rem
-  border-radius: 3px
+  border-radius: 0.214rem
   background-color: $light
   opacity: 1
   &::hover
     background-color: $mainColor
   &-active
     background-color: $mainColor
+.list-clubs__wrap
+  .choice-address
+    position: relative
+    margin-bottom: 1rem
+  input
+    appearance: none
+    position: absolute
+    height: 0
+    width: 0
+  .custom-check
+    position: absolute
+    margin-left: -2rem
+    width: 1.5rem
+    height: 1.5rem
+    border: 1px solid #b7b7b7
+    border-radius: 0.357rem
+    background-color: #fff
+  input[type=checkbox]:checked + label > .custom-check
+    background: $mainColor url(../img/header/check.png) no-repeat center / 0.8rem
+  label
+    position: relative
+    text-transform: uppercase
+    strong
+      display: block

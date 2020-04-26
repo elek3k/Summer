@@ -57,6 +57,24 @@ $(document).ready(function () {
     });
   });
 
+  // show * in placeholder
+  $('#cards__name').focus(function() {
+    $('#placeholderName').hide();
+});
 
+$('#cards__name').blur(function() {
+    if ($(this).val().trim() === '') {
+        $('#placeholderName').show();
+    }
+});
+  $('#cards__tel').focus(function() {
+    $('#placeholderTel').hide();
+});
+
+$('#cards__tel').blur(function() {
+    if ($(this).val().trim() === '') {
+        $('#placeholderTel').show();
+    }
+});
 
 })

@@ -329,14 +329,76 @@
     </section>
     <!-- /.gallery -->
 
-    <section class="register">
-      <div class="container"></div>
+    <section class="cards">
+      <div class="container">
+        <h2 class="title title--before cards__title">клубные карты</h2>
+        <div class="cards__row">
+          <div class="cards__img">
+            <img src="img/cards/cards-img.png" alt="">
+          </div>
+        
+          <form action="POST" class="form cards__form">
+            <div class="input-group choice-duration">
+              <input type="checkbox" class="input choice__input" id="month1">
+              <label for="month1"><span>1 месяц</span></label>
+              <input type="checkbox" class="input choice__input" id="month6">
+              <label for="month6"><span>6 месяцев</span></label>
+              <input type="checkbox" class="input choice__input" id="month9">
+              <label for="month9" class="active"><span>9 месяцев</span></label>
+              <input type="checkbox" class="input choice__input" id="month12">
+              <label for="month12"><span>12 месяцев</span></label>
+            </div>
+            <!-- /.input-group -->
+            <div class="input-group">
+              <div class="list-clubs__wrap">
+                <div class="choice-address cards__choice-address">
+                  <input  class="input choice-address__input" type="checkbox" id="card-mozaika">
+                  <label for="card-mozaika">                
+                    <span class="custom-check choice-address__custom-check"></span>
+                        <strong>Лето-«Мозаика»</strong>
+                        <span>г. Москва, 7-я Кожуховская ул., 9</span>
+                    </label>
+                </div>
+                  
+                <div class="choice-address cards__choice-address">
+                  <input  class="input choice-address-input" type="checkbox" id="card-schelkovo">
+                  <label for="card-schelkovo">
+                    <span class="custom-check choice-address__custom-check"></span>
+                      <strong>Лето-«Щелково»</strong>
+                      <span>г. Щелково, ул. Советская, д. 16</span>
+                  </label>
+                </div>
+              </div>
+              <div class="input-wrap">
+                <input type="text" class="input cards__input" id="cards__name">
+                <label for="cards__name" id="placeholderName">Ваше имя<span> *</span></label>
+              </div>
+              <div class="input-wrap">
+                <input type="text" class="input cards__input" id="cards__tel">
+                <label for="cards__tel" id="placeholderTel">Ваш номер телефона<span> *</span></label>
+              </div>
+            </div>
+            <!-- /.input-group -->
+            <div class="policy cards__policy">
+              <div class="list-clubs__wrap">
+                <input type="checkbox" id="cards-checkbox" class="checkbox cards__checkbox">
+                <label class="label cards__label" for="cards-checkbox"><span class="custom-check choice-address__custom-check"></span>я согласен на обработку персональных данных</label>
+              </div>
+            </div>
+            <button class="button button--main form__button">Забронировать карту</button>
+          </form>
+        </div>
+        <!-- /.cards__row -->
+      </div>
       <!-- /.container -->
     </section>
-    <!-- /.register -->
+    <!-- /.cards -->
   
   </main>
 
+  <footer class="footer">
+    
+  </footer>
  
 
   <!-- jquery -->
