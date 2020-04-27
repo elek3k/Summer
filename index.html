@@ -208,17 +208,23 @@
       <div class="container">
         <h2 class="title title--light">записаться на бесплатный визит</h2>
         <!-- /.title title--light -->
-        <form action="POST" class="form register__form">
+        <form action="sendVisit.php" method="POST" class="form register__form form__visit">
           <div class="input-group register__input-group">
-            <input type="text" class="input register__input" name="name" id="register-name" placeholder="Ваше имя...">
+            <div class="input-wrap">
+              <input type="text" class="input register__input validate" name="name" id="register-name" placeholder="Ваше имя...">
+            </div>
           </div>
           <div class="input-group register__input-group">
-            <input type="tel" class="input register__input" name="tel" id="register-tel" placeholder="Ваш номер телефона...">
+            <div class="input-wrap">
+              <input type="tel" class="input register__input validate" name="tel" id="register-tel" placeholder="Ваш номер телефона...">
+            </div>
           </div>
           <button class="button button--main">записаться</button>
           <div class="policy register__policy">
-            <input type="checkbox" id="register-checkbox" class="checkbox register__checkbox">
-            <label class="label register__label" for="register-checkbox">я согласен на обработку персональных данных</label>
+            <div class="input-wrap">
+              <input type="checkbox" name="policy" id="register-checkbox" class="checkbox register__checkbox validate">
+              <label class="label register__label" for="register-checkbox">я согласен на обработку персональных данных</label>
+            </div>
           </div>
         </form>
       </div>
@@ -337,22 +343,22 @@
             <img src="img/cards/cards-img.png" alt="">
           </div>
         
-          <form action="POST" class="form cards__form">
+          <form action="send.php" method="POST" class="cards__form">
             <div class="input-group choice-duration">
-              <input type="checkbox" class="input choice__input" id="month1">
-              <label for="month1"><span>1 месяц</span></label>
-              <input type="checkbox" class="input choice__input" id="month6">
-              <label for="month6"><span>6 месяцев</span></label>
-              <input type="checkbox" class="input choice__input" id="month9">
-              <label for="month9" class="active"><span>9 месяцев</span></label>
-              <input type="checkbox" class="input choice__input" id="month12">
-              <label for="month12"><span>12 месяцев</span></label>
+              <input type="checkbox" class="input choice__input" id="month1" value="1">
+              <label class="month" for="month1"><span>1 месяц</span></label>
+              <input type="checkbox" class="input choice__input" id="month6" value="6">
+              <label class="month active" for="month6"><span>6 месяцев</span></label>
+              <input type="checkbox" class="input choice__input" id="month9" value="9">
+              <label class="month" for="month9"><span>9 месяцев</span></label>
+              <input type="checkbox" class="input choice__input" id="month12" vlvalue="12">
+              <label class="month" for="month12"><span>12 месяцев</span></label>
             </div>
             <!-- /.input-group -->
             <div class="input-group">
               <div class="list-clubs__wrap">
                 <div class="choice-address cards__choice-address">
-                  <input  class="input choice-address__input" type="checkbox" id="card-mozaika">
+                  <input  class="input choice-address__input" type="radio" id="card-mozaika" name="choise-club__address" checked value="Мозаика">
                   <label for="card-mozaika">                
                     <span class="custom-check choice-address__custom-check"></span>
                         <strong>Лето-«Мозаика»</strong>
@@ -361,7 +367,7 @@
                 </div>
                   
                 <div class="choice-address cards__choice-address">
-                  <input  class="input choice-address-input" type="checkbox" id="card-schelkovo">
+                  <input  class="input choice-address-input" type="radio" id="card-schelkovo" name="choise-club__address" value="Щёлково">
                   <label for="card-schelkovo">
                     <span class="custom-check choice-address__custom-check"></span>
                       <strong>Лето-«Щелково»</strong>
@@ -370,19 +376,21 @@
                 </div>
               </div>
               <div class="input-wrap">
-                <input type="text" class="input cards__input" id="cards__name">
+                <input type="text" name="name" class="input cards__input validate" id="cards__name">
                 <label for="cards__name" id="placeholderName">Ваше имя<span> *</span></label>
               </div>
               <div class="input-wrap">
-                <input type="text" class="input cards__input" id="cards__tel">
+                <input type="tel" name="tel" class="input cards__input validate" id="cards__tel">
                 <label for="cards__tel" id="placeholderTel">Ваш номер телефона<span> *</span></label>
               </div>
             </div>
             <!-- /.input-group -->
             <div class="policy cards__policy">
               <div class="list-clubs__wrap">
-                <input type="checkbox" id="cards-checkbox" class="checkbox cards__checkbox">
-                <label class="label cards__label" for="cards-checkbox"><span class="custom-check choice-address__custom-check"></span>я согласен на обработку персональных данных</label>
+                <div class="input-wrap">
+                  <input type="checkbox" name="policy" id="cards-checkbox" class="checkbox cards__checkbox validate" checked>
+                  <label class="label cards__label" for="cards-checkbox"><span class="custom-check choice-address__custom-check"></span>я согласен на обработку персональных данных</label>
+                </div>
               </div>
             </div>
             <button class="button button--main form__button">Забронировать карту</button>
@@ -393,7 +401,6 @@
       <!-- /.container -->
     </section>
     <!-- /.cards -->
-  
   </main>
 
   <footer class="footer">
@@ -457,7 +464,17 @@
     </div>
     <!-- /.container -->
     <div class="container container--big">
-z
+      <div class="footer__row">
+        <div class="copyright"><span>&copy; Фитнес-центр «Лето», 2017. Все права защищены.</span></div>
+        <div class="social">
+          <a href="https://vk.com/" class="social__link"><div class="social__block social__block--vk"></div></a>
+          <a href="https://www.instagram.com/" class="social__link"><div class="social__block social__block--instagram"></div></a>
+          <a href="https://www.youtube.com/" class="social__link"><div class="social__block social__block--youtube"></div></a>
+          <a href="https://www.facebook.com/" class="social__link"><div class="social__block social__block--facebook"></div></a>
+          <a href="https://twitter.com/" class="social__link"><div class="social__block social__block--twitter"></div></a>
+        </div>
+      </div>
+      <!-- /.footer__row -->
     </div>
   </footer>
   <!-- /.footer -->
@@ -465,16 +482,22 @@ z
   <div class="modal modal__visit">
     <div class="modal__dialog">
       <button class="modal__close modal__visit-close"></button>
-      <h2 class="modal__title title ">обратный звонок</h2>
-      <form action="#" class="modal__form">
+      <h2 class="modal__title title ">записаться на визит</h2>
+      <form action="sendVisit.php" method="POST" class="modal__form form__visit">
         <div class="input-group">
-          <input type="text" class="input modal__input" placeholder="Ваше имя...">
-          <input type="tel" class="input modal__input" placeholder="Ваш номер телефона...">
+          <div class="input__wrap">
+            <input type="text" class="input modal__input validate" name="name" placeholder="Ваше имя...">
+          </div>
+          <div class="input__wrap">
+            <input type="tel" class="input modal__input validate" name="tel" placeholder="Ваш номер телефона...">
+          </div>
         </div>
         <div class="policy modal__policy">
           <div class="list-clubs__wrap">
-            <input type="checkbox" id="visit-checkbox" class="checkbox cards__checkbox" checked>
-            <label class="label cards__label" for="visit-checkbox"><span class="custom-check choice-address__custom-check"></span>я согласен на обработку персональных данных</label>
+            <div class="input__wrap">
+              <input type="checkbox" name="policy" id="visit-checkbox" class="checkbox cards__checkbox validate" checked>
+              <label class="label cards__label" for="visit-checkbox"><span class="custom-check choice-address__custom-check"></span>я согласен на обработку персональных данных</label>
+            </div>
           </div>
         </div>
         <button class="button button--main modal__button">перезвоните мне</button>
@@ -488,16 +511,22 @@ z
   <div class="modal modal__callback">
     <div class="modal__dialog">
       <button class="modal__close modal__callback-close"></button>
-      <h2 class="modal__title title ">записаться на визит</h2>
-      <form action="#" class="modal__form">
+      <h2 class="modal__title title ">обратный звонок</h2>
+      <form action="sendCallback" method="POST" class="modal__form form__callback">
         <div class="input-group">
-          <input type="text" class="input modal__input" placeholder="Ваше имя...">
-          <input type="tel" class="input modal__input" placeholder="Ваш номер телефона...">
-        </div>
+          <div class="input__wrap">
+            <input type="text" class="input modal__input validate" name="name" placeholder="Ваше имя...">
+          </div>
+          <div class="input__wrap">
+            <input type="tel" class="input modal__input validate" name="tel" placeholder="Ваш номер телефона...">
+          </div>
+          </div>
         <div class="policy modal__policy">
           <div class="list-clubs__wrap">
-            <input type="checkbox" id="callback-checkbox" class="checkbox cards__checkbox" checked>
-            <label class="label cards__label" for="callback-checkbox"><span class="custom-check choice-address__custom-check"></span>я согласен на обработку персональных данных</label>
+            <div class="input__wrap">
+              <input type="checkbox" name="policy" id="callback-checkbox" class="checkbox cards__checkbox validate" checked>
+              <label class="label cards__label" for="callback-checkbox"><span class="custom-check choice-address__custom-check"></span>я согласен на обработку персональных данных</label>
+            </div>
           </div>
         </div>
         <button class="button button--main modal__button">записаться</button>
@@ -507,6 +536,10 @@ z
     <!-- /.modal__dialog -->
   </div>
   <!-- /.modal callback -->
+
+  <div class="page-scroll">
+    <a href="#" class="page-scroll__up" title="В начало"></a>
+  </div>
  
 
   <!-- jquery -->
@@ -514,6 +547,12 @@ z
 
   <!-- слайдер -->
   <script src="js/swiper.min.js"></script>
+
+  <!-- mask for input type tel -->
+  <script src="js/jquery.mask.min.js"></script>
+
+  <!-- validate form -->
+  <script src="js/jquery.validate.min.js"></script>
 
   <!-- main js -->
   <script src="js/main.js"></script>

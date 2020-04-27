@@ -1,18 +1,25 @@
 .footer
   padding-top: 3.928rem
-  padding-bottom: 2.928rem
   background-color: $footer
   .container
+    padding-bottom: 3rem
     &--big
-      height: 9.187rem
+      padding: 2.142rem 4.428rem
       border-top: 1px solid #5e5d69
+      .footer__row
+        align-items: center
+      span
+        color: $light
+        font-weight: lighter
   &__row
     display: flex
     justify-content: space-between
     .list-clubs
       &__wrap
         a
-          color: $light
+          color: $light         
+          strong
+            font-weight: 500
         input[type=checkbox]
           border-color: $light
         input[type=checkbox]:hover + label > a > .custom-check
@@ -26,6 +33,24 @@
         color: $mainColor
       &__address
         font-weight: lighter
+    .social
+      display: flex
+      &__block
+        width: 2.785rem
+        height: 2.785rem
+        border: 1px solid $light
+        border-radius: 0.25rem
+        margin-left: 0.642rem
+        &--vk
+          background: url(../img/footer/icon-vk.png) no-repeat center / 1.6rem
+        &--instagram
+          background: url(../img/footer/icon-instagram.png) no-repeat center / 1.5rem
+        &--youtube
+          background: url(../img/footer/icon-youtube.png) no-repeat center / 1.6rem
+        &--facebook
+          background: url(../img/footer/icon-facebook.png) no-repeat center / 0.7rem
+        &--twitter
+          background: url(../img/footer/icon-twitter.png) no-repeat center / 1.4rem
   &__list
     margin: 0
     list-style: none
@@ -46,3 +71,4 @@
         text-align: right
     .number
       margin-bottom: 0.9rem
+  

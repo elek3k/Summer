@@ -6,9 +6,11 @@ $(document).ready(function () {
       modalVisit = $('.modal__visit'),
       modalCallback = $('.modal__callback'),
       openCallbackBtn = $('.button-callback'),
-      openVisitBtn = $('.record__button');
+      openVisitBtn = $('.record__button'),
       closeVisitBtn = $('.modal__visit-close'),
       closeCallbackBtn = $('.modal__callback-close'),
+      scrollUp = $('.page-scroll__up'),
+      month = $('.month');
 
   // open address list
   openAddress.on('click', function () {
@@ -19,6 +21,14 @@ $(document).ready(function () {
       else if(openList.css('visibility') == "visible"){
         openList.css('visibility', 'hidden')
       }
+  });
+
+  // close address list onclick out modal
+  $(document).mouseup(function (e) {
+    if (openAddress.has(e.target).length === 0) {
+      openAddress.removeClass('open')
+      openList.css('visibility', 'hidden')
+    }
   });
 
   // modal
@@ -47,27 +57,28 @@ $(document).ready(function () {
   });
 
 
-  // open modal__visit
+  // modal__callback
+  // open modal__callback
   openCallbackBtn.on('click', function () {
-    modalCallback.addClass('modal__visit--visible')
+    modalCallback.addClass('modal__callback--visible')
   });
 
-  // close modal__visit
+  // close modal__callback
   closeCallbackBtn.on('click', function () {
-    modalCallback.removeClass('modal__visit--visible')
+    modalCallback.removeClass('modal__callback--visible')
   });
 
-  // close modal__visit onclick out modal
+  // close modal__callback onclick out modal
   $(document).mouseup(function (e) {
     if (modalCallback.has(e.target).length === 0) {
-      modalCallback.removeClass('modal__visit--visible')
+      modalCallback.removeClass('modal__callback--visible')
     }
   });
 
-  // close modal__visit onclick key esc
+  // close modal__callback onclick key esc
   $(document).keydown(function (e) {
     if (e.which === 27) {
-      modalCallback.removeClass('modal__visit--visible')
+      modalCallback.removeClass('modal__callback--visible')
     } 
   });
 
@@ -119,6 +130,29 @@ $(document).ready(function () {
     },
   })
 
+
+  // scroll page up
+   // плавающая кнопка прокрутки станицы вверх
+	scrollUp.click(function(){
+		$('html, body').animate({scrollTop: 0}, 600);
+		return false;
+  });
+
+  // показывать и скрывать кнопку прокрутки вверх
+  $(window).scroll(function() {
+		if($(this).scrollTop() >= 350) {
+			scrollUp.css('height', '2.857rem');
+    } 
+    else {
+			scrollUp.css('height', '0');
+    }
+  });
+
+
+  // mask for input type tel
+  //  маска телефона
+  $('[type=tel]').mask('+7(000) 000-00-00');
+
   // resize
   $(function(){
     $('.resize-slide').height($('.resize-slide').width()/2.3);
@@ -127,6 +161,15 @@ $(document).ready(function () {
       $('.resize-slide').height($('.resize-slide').width()/2.3);
     });
   });
+
+  // choice month for registration
+  for (let i=0; i<month.length; i++){
+    $(month[i]).click(function(e) {
+      e.preventDefault();
+      $(".month.active").removeClass('active');
+      $(this).addClass('active');
+    });
+  }
 
   // show * in placeholder
   $('#cards__name').focus(function() {
@@ -144,6 +187,150 @@ $(document).ready(function () {
       if ($(this).val().trim() === '') {
           $('#placeholderTel').show();
       }
+  });
+
+  // validation form
+  // validation first form
+  $(".form__visit").validate({
+    errorClass: "invalid",
+    errorElement: "div",
+    rules: {
+      name: {
+        required: true,
+        minlength: 2,
+        maxlength: 25
+    },
+      tel:  {
+        required: true,
+        minlength: 17
+    },
+      policy: "required",
+
+    },
+    messages: {
+      name: {
+        required: "Введите Ваше имя",
+        minlength: "Минимум два символа",
+        maxlength: "Не допустимая длина имени"
+      },
+      tel: {
+        required: "Введите ваш номер телефона",
+        minlength: "Заполните номер полностью"
+      },
+      policy: "Необходимо дать согласие на обработку данных"
+    },
+    submitHandler: function(form) {
+      $.ajax({
+        type: "POST",
+        url: "sendVisit.php",
+        data: $(form).serialize(),
+        success: function (response) {
+          console.log('Ajax сработал. Ответ сервера: ' + response);
+          $(form)[0].reset();
+          modalVisit.removeClass('modal__visit--visible');
+          // modalThanks.toggleClass('modal-thanks--visible')
+        },
+        // error: function (response) {
+        //   console.error('Ошибка запроса ' + response)
+        // }
+      });
+    }
+  });
+
+  // validation second form
+  $(".form__callback").validate({
+    errorClass: "invalid",
+    errorElement: "div",
+    rules: {
+      name: {
+        required: true,
+        minlength: 2,
+        maxlength: 25
+    },
+      tel:  {
+        required: true,
+        minlength: 17
+    },
+      policy: "required",
+
+    },
+    messages: {
+      name: {
+        required: "Введите Ваше имя",
+        minlength: "Минимум два символа",
+        maxlength: "Не допустимая длина имени"
+      },
+      tel: {
+        required: "Введите ваш номер телефона",
+        minlength: "Заполните номер полностью"
+      },
+      policy: "Необходимо дать согласие на обработку данных"
+    },
+    submitHandler: function(form) {
+      $.ajax({
+        type: "POST",
+        url: "sendCallback.php",
+        data: $(form).serialize(),
+        success: function (response) {
+          console.log('Ajax сработал. Ответ сервера: ' + response);
+          $(form)[0].reset();
+          modalCallback.removeClass('modal__callback--visible');
+          // modalThanks.toggleClass('modal-thanks--visible')
+        },
+        // error: function (response) {
+        //   console.error('Ошибка запроса ' + response)
+        // }
+      });
+    }
+  });
+
+
+  // validation third form
+  $(".cards__form").validate({
+    errorClass: "invalid",
+    errorElement: "div",
+    rules: {
+      name: {
+        required: true,
+        minlength: 2,
+        maxlength: 25
+    },
+      tel:  {
+        required: true,
+        minlength: 17
+    },
+      policy: "required",
+
+    },
+    messages: {
+      name: {
+        required: "Введите Ваше имя",
+        minlength: "Минимум два символа",
+        maxlength: "Не допустимая длина имени"
+      },
+      tel: {
+        required: "Введите ваш номер телефона",
+        minlength: "Заполните номер полностью"
+      },
+      policy: "Необходимо дать согласие на обработку данных"
+    },
+    submitHandler: function(form) {
+      $.ajax({
+        type: "POST",
+        url: "send.php",
+        data: $(form).serialize(),
+        success: function (response) {
+          console.log('Ajax сработал. Ответ сервера: ' + response);
+          $(form)[0].reset();
+          // modalCallback.removeClass('modal__callback--visible');
+          // modalThanks.toggleClass('modal-thanks--visible')
+        },
+        // error: function (response) {
+        //   console.error('Ошибка запроса ' + response)
+        // }
+      });
+    }
+    
   });
 
 })

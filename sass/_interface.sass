@@ -80,7 +80,9 @@
     border: 1px solid #b7b7b7
     border-radius: 0.357rem
     background-color: #fff
-  input[type=checkbox]:checked + label > .custom-check
+  input[type=checkbox]:checked ~ label > .custom-check
+    background: $mainColor url(../img/header/check.png) no-repeat center / 0.8rem
+  input[type=radio]:checked + label > .custom-check
     background: $mainColor url(../img/header/check.png) no-repeat center / 0.8rem
   label
     position: relative
@@ -98,6 +100,8 @@
   &__text
     margin: 0
     font-weight: lighter
+
+// модфльные окна
 .modal
   opacity: 0
   visibility: hidden
@@ -145,7 +149,22 @@
     width: 19.142rem
     &::placeholder
       font-size: 0.928rem
+  .input__wrap
+    position: relative
+  .validate +
+    div[id$=error]
+      position: absolute
+      bottom: 0
+      left: 0
+      color: red
+      z-index: 10
+  .validate +
+    div[id=policy-error]
+      left: -6.3rem
+      bottom: -1rem
+      width: 24rem
   &__policy
+    position: relative
     margin: auto
     margin-bottom: 1.357rem
     max-width: 10.714rem
@@ -155,3 +174,17 @@
   &__button
     display: block
     margin: auto
+.page-scroll
+  &__up
+    position: fixed
+    right: 3rem
+    bottom: 7rem
+    width: 2.857rem
+    height: 0
+    border-radius: 50%
+    background: $mainColor url(../img/up-arrow.svg) no-repeat center / 1.6rem
+    transition: height 100ms ease, transform 200ms linear
+    transform: rotate(-10deg)
+    &:hover
+      transform: rotate(0)
+      
