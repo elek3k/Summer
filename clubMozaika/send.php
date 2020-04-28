@@ -34,7 +34,7 @@ try {
     $mail->Body    = "Клиет <b>забронировал карту</b>.<hr><br>
     Имя клиента: <b>${userName}</b>.<br> 
     Его телефон: <b>${userPhone}</b>.<br>
-    Срок карты: <b>${seasonTicket} месяц(ев)</b>.<br>
+    Выбрана карта: <b>${seasonTicket} месяц(ев)</b>.<br>
     Адресс клуба: <b>${clubAddress}</b>.<br>";
 
     if ($mail->send()) {
