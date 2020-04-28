@@ -1,0 +1,74 @@
+.clubs
+  padding-bottom: 3rem
+  background-color: $light
+  &__title
+    margin-bottom: 3rem
+  &__item
+    margin-right: 2rem
+  &__list
+    display: flex
+    justify-content: start
+    margin-bottom: 2rem
+    a
+      text-decoration: none
+  &__img
+    max-width: 39.642rem
+    max-height: 22.785rem
+    img
+      width: 100%
+      max-height: 22.785rem
+      height: auto
+  &__address
+    position: relative
+    text-align: center
+    padding: 1.5rem
+    border: 1px solid rgba($text, 0.14)
+    color: $text
+    background: url(../img/clubs/mark-map.png) no-repeat left 1.5rem center / 2.714rem, url(../img/clubs/mark-map.png) no-repeat right 1.5rem center / 2.714rem
+    strong
+      font-size: 1.285rem
+    span
+      display: block
+      font-size: 1.214rem
+      font-weight: lighter
+  &__discription
+    margin-left: 2rem
+    p
+      font-size: 1.258rem
+      font-weight: 500
+      color: $text
+    span
+      display: block
+      font-size: 1.214rem
+      font-weight: lighter
+  &__features
+    display: flex
+    justify-content: space-between
+    .features
+      &__item
+        display: flex
+        align-items: center
+        flex-direction: column
+        width: 10.357rem
+        text-align: center
+        border: 1px solid rgba(39, 25, 48, 0.14)
+      &__icon
+        position: relative
+        height: 6.574rem
+        display: flex
+        align-items: center
+        justify-content: center
+        &::after
+          position: absolute
+          content: ''
+          bottom: 0
+          left: 50%
+          transform: translateX(-50%)
+          width: 7.142rem
+          height: 1px
+          background-color: rgba(39, 25, 48, 0.14)
+      &__discription
+        padding:  0 0.9rem
+        p
+          color: $text
+          font-weight: bold

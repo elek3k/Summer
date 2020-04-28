@@ -1,0 +1,74 @@
+.footer
+  padding-top: 3.928rem
+  background-color: $footer
+  .container
+    padding-bottom: 3rem
+    &--big
+      padding: 2.142rem 4.428rem
+      border-top: 1px solid #5e5d69
+      .footer__row
+        align-items: center
+      span
+        color: $light
+        font-weight: lighter
+  &__row
+    display: flex
+    justify-content: space-between
+    .list-clubs
+      &__wrap
+        a
+          color: $light         
+          strong
+            font-weight: 500
+        input[type=checkbox]
+          border-color: $light
+        input[type=checkbox]:hover + label > a > .custom-check
+          background: $mainColor url(../img/header/check.png) no-repeat center / 0.8rem
+          border-color: $mainColor
+      &__title
+        display: inline-block
+        margin-bottom: 0.5rem
+        font-size: 1.142rem
+        font-weight: bold
+        color: $mainColor
+      &__address
+        font-weight: lighter
+    .social
+      display: flex
+      &__block
+        width: 2.785rem
+        height: 2.785rem
+        border: 1px solid $light
+        border-radius: 0.25rem
+        margin-left: 0.642rem
+        &--vk
+          background: url(../img/footer/icon-vk.png) no-repeat center / 1.6rem
+        &--instagram
+          background: url(../img/footer/icon-instagram.png) no-repeat center / 1.5rem
+        &--youtube
+          background: url(../img/footer/icon-youtube.png) no-repeat center / 1.6rem
+        &--facebook
+          background: url(../img/footer/icon-facebook.png) no-repeat center / 0.7rem
+        &--twitter
+          background: url(../img/footer/icon-twitter.png) no-repeat center / 1.4rem
+  &__list
+    margin: 0
+    list-style: none
+    li
+      margin-bottom: 0.6rem
+      &:first-of-type
+        font-size: 1.142rem
+        font-weight: bold
+        color: $mainColor
+    a
+      text-decoration: none
+      font-weight: lighter
+      color: $light
+  &__call
+    .call
+      &__text
+        margin-bottom: 0.5rem
+        text-align: right
+    .number
+      margin-bottom: 0.9rem
+  

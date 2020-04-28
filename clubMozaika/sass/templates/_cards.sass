@@ -1,0 +1,100 @@
+.cards
+  padding-top: 2rem
+  padding-bottom: 3rem
+  &__title
+    margin-bottom: 4rem
+  &__row
+    display: flex
+    justify-content: space-between
+  &__form
+    user-select: none
+    flex-basis: 80%
+    max-width: 52.857rem
+    .list-clubs__wrap
+      margin-bottom: 1.5rem
+      input[type=checkbox]:checked + label > .custom-check
+        border-color: $mainColor
+    .choice
+      &-duration
+        display: flex
+        justify-content: space-between
+        flex-wrap: wrap
+        margin-bottom: 2rem
+        .month
+          display: inline-block
+          width: 100%
+          max-width: 10.357rem
+          height: 5.571rem 
+          text-align: center
+          vertical-align: middle
+          font-size: 0.857rem
+          text-transform: uppercase
+          line-height: 1.3rem
+          color: rgba($text, 0.6)
+          border: 1px solid #b7b7b7
+          border-radius: 3px
+          &:hover
+            cursor: pointer
+          span
+            display: block
+        .active
+      &__input
+        position: absolute
+        appearance: none
+        &:checked + label
+          background-color: $mainColor
+          border: 1px solid $mainColor
+          color: $text
+      &-address
+        padding-left: 2rem
+        label
+          span
+            font-weight: lighter
+    .input-wrap
+      position: relative
+      margin-bottom: 0.9rem
+      label
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+        left: 2rem
+        font-weight: lighter
+        color: rgba($text, 0.6)
+        span
+          color: rgba($mainColor, 1)
+      .cards__label
+        position: relative
+    .validate +
+      div[id$=error]
+        position: absolute
+        bottom: -1rem
+        left: 2rem
+        color: red
+        z-index: 10
+    .validate +
+      div[id=policy-error]
+        left: 2em
+        bottom: -1rem
+        width: 24rem
+  &__input
+    position: relative
+    border: 1px solid #b7b7b7
+    width: 100%
+  &__policy
+    display: flex
+    justify-content: space-between
+    align-items: center
+    margin-top: 2rem  
+    .list-clubs__wrap
+      margin-bottom: 0
+      .input-wrap
+        margin-bottom: 0
+    label
+      display: flex
+      align-items: center
+      padding-left: 2rem
+      color: rgba($text, 0.6)
+      font-size: 0.785rem
+  .form__button
+    float: right
+  

@@ -1,0 +1,116 @@
+.header
+  .row1
+    background: url(../img/header/header-bg.png) no-repeat center / cover
+  &__options
+    display: flex
+    justify-content: space-between
+    align-items: center
+    flex-wrap: wrap
+    height: 6.785rem
+  &__list-clubs
+    position: relative
+    margin-right: 0.7rem
+    height: 3.214rem
+    width: 3.214rem
+    border: 1px solid $mainColor
+    border-radius: 1.671rem
+    background: url(../img/header/pointer.png) no-repeat center / 1.071rem 0.428rem
+    cursor: pointer
+    z-index: 5
+    .club-address
+      visibility: hidden
+      position: absolute
+      left: -1px
+      top: 3.15rem
+      padding: 0.5rem
+      padding-left: 3.928rem
+      border-radius: 5px
+      border-top-left-radius: 0
+      display: flex
+      flex-direction: column
+      width: 21rem
+      background-color: $mainColor
+      z-index: 2
+      input[type=checkbox]
+        position: absolute
+        appearance: none
+      .wrap
+        position: relative
+      .check__box
+        position: absolute
+        margin-top: 0.7rem
+        margin-left: -2rem
+        width: 21px
+        height: 21px
+        border: 1px solid #d1ab15
+        border-radius: 5px
+        background-color: #fff
+      input[type=checkbox]:hover + span
+        background: #fff url(../img/header/check.png) no-repeat center / 0.8rem
+      a
+        display: inline-block
+        margin-top: 0.7rem
+        margin-bottom: 0.7rem
+        text-decoration: none
+        text-transform: none
+        color: $black
+  &__list-text
+    font-size: 0.857rem
+    font-weight: bold
+    text-transform: uppercase
+    color: $mainColor
+  .open
+    border-radius:  1.671rem 1.671rem 0 0
+    background: $mainColor url(../img/header/pointer-black.png) no-repeat center / 1.071rem 0.428rem
+    span
+      color: $black
+  .record
+    &__button
+      padding-left: 3rem
+      text-align: left
+      border: none
+      background-color: transparent
+      color: $light
+      font-size: 1rem
+      font-weight: bold
+      text-transform: none
+      cursor: pointer
+      background: url(../img/header/visit.png) no-repeat left center / 2.3rem
+  button
+    display: inline-block
+    margin-left: 1.5rem
+  &__call
+    display: flex
+    align-items: center 
+    justify-content: center
+  
+  .row2
+    background: black linear-gradient( 45deg, rgb(35,10,22) 0%, rgb(12,11,21) 100%);
+  &__nav
+    display: flex
+    justify-content: space-between
+    margin: 0
+    padding: 1.785rem 0
+    list-style: none
+    .nav__item
+      border-right: 1px dotted rgba($light, 0.3)
+      padding-right: 2.5rem
+      &:last-of-type
+        border-right: none
+        padding-right: 0
+    .nav__link
+      color: $light
+      text-transform: uppercase
+  .list-wrap
+    display: flex
+    justify-content: center
+    align-items: center
+  .mozaika-club
+    strong
+      color: $mainColor
+      font-size: 1.07rem
+    span
+      display: block
+      font-size: 1.07rem
+      font-weight: lighter
+      color: $light

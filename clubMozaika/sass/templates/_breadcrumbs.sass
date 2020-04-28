@@ -1,0 +1,32 @@
+.breadcrumbs
+  border-bottom: 1px solid rgb(225, 223, 226)
+  &__row
+    padding: 1rem 0
+  &__list
+    margin: 0
+    padding: 0
+    list-style: none
+    display: flex
+    font-size: 0.928rem
+    font-weight: lighter
+    color: #949494
+  &__link
+    position: relative
+    margin: 0 0.6rem
+    text-decoration: none
+    font-size: 0.928rem
+    font-weight: 500
+    color: $text
+    &::after
+      position: absolute
+      content: ''
+      top: 50%
+      transform: translateY(-50%)
+      right: -0.8rem
+      width: 0.6rem
+      height: 0.6rem
+      background: url(../img/breadcrumbs/arrow-right.svg) no-repeat center / 0.6rem
+    &:first-child
+      margin-left: 0
+    &:last-of-type
+      margin-right: 1.2rem
