@@ -34,7 +34,7 @@
                 <input type="checkbox" id="mozaika">
                 <span class="check__box"></span>
                   <label for="mozaika">
-                    <a href="/">
+                    <a href="mozaika.html">
                       <strong>Лето-«Мозаика»</strong>
                       <span>г. Москва, 7-я Кожуховская ул., 9</span>
                     </a>
@@ -208,7 +208,7 @@
       <div class="container">
         <h2 class="title title--light">записаться на бесплатный визит</h2>
         <!-- /.title title--light -->
-        <form action="sendVisit.php" method="POST" class="form register__form form__visit">
+        <form action="sendVisit.php" method="POST" class="form register__form">
           <div class="input-group register__input-group">
             <div class="input-wrap">
               <input type="text" class="input register__input validate" name="name" id="register-name" placeholder="Ваше имя...">
@@ -345,13 +345,13 @@
         
           <form action="send.php" method="POST" class="cards__form">
             <div class="input-group choice-duration">
-              <input type="checkbox" class="input choice__input" id="month1" value="1">
+              <input type="radio" class="input choice__input" id="month1" value="1" name="seasonTicket">
               <label class="month" for="month1"><span>1 месяц</span></label>
-              <input type="checkbox" class="input choice__input" id="month6" value="6">
+              <input type="radio" class="input choice__input" id="month6" value="6" name="seasonTicket" checked>
               <label class="month active" for="month6"><span>6 месяцев</span></label>
-              <input type="checkbox" class="input choice__input" id="month9" value="9">
+              <input type="radio" class="input choice__input" id="month9" value="9" name="seasonTicket">
               <label class="month" for="month9"><span>9 месяцев</span></label>
-              <input type="checkbox" class="input choice__input" id="month12" vlvalue="12">
+              <input type="radio" class="input choice__input" id="month12" value="12" name="seasonTicket">
               <label class="month" for="month12"><span>12 месяцев</span></label>
             </div>
             <!-- /.input-group -->
@@ -532,6 +532,20 @@
         <button class="button button--main modal__button">записаться</button>
       </form>
       <!-- /.modal__form -->
+    </div>
+    <!-- /.modal__dialog -->
+  </div>
+  <!-- /.modal callback -->
+
+  <div class="modal modal__thanks">
+    <div class="modal__dialog">
+      <button class="modal__close modal__thanks-close"></button>
+      <h2 class="modal__title title ">заявка принята</h2>
+      <div class="box__thanks">
+        <h3 class="thanks__title">
+          С вами свяжется <span>наш менеджер!</span>
+        </h3>
+      </div>
     </div>
     <!-- /.modal__dialog -->
   </div>

@@ -30,11 +30,13 @@
           &:hover
             cursor: pointer
         .active
+      &__input
+        position: absolute
+        appearance: none
+        &:checked + label
           background-color: $mainColor
           border: 1px solid $mainColor
           color: $text
-      &__input
-        display: none
       &-address
         padding-left: 2rem
         label

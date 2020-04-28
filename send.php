@@ -3,7 +3,7 @@
 $userName = $_POST['name'];
 $userPhone = $_POST['tel'];
 $clubAddress = $_POST['choise-club__address'];
-$seasonTicket = $_POST['.active'];
+$seasonTicket = $_POST['seasonTicket'];
 
 // Load Composer's autoloader
 require 'phpmailer/PHPMailer.php';
@@ -31,10 +31,10 @@ try {
     // Content
     $mail->isHTML(true);                                  // Set email format to HTML
     $mail->Subject = 'Новая заявка с сайта на бронирование карты';
-    $mail->Body    = "Клиет хочет <b>забронировать карту</b>.<hr><br>
+    $mail->Body    = "Клиет <b>забронировал карту</b>.<hr><br>
     Имя клиента: <b>${userName}</b>.<br> 
     Его телефон: <b>${userPhone}</b>.<br>
-    Срок карты: <b>${seasonTicket}</b>.<br>
+    Срок карты: <b>${seasonTicket} месяц(ев)</b>.<br>
     Адресс клуба: <b>${clubAddress}</b>.<br>";
 
     if ($mail->send()) {

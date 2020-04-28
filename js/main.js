@@ -9,8 +9,9 @@ $(document).ready(function () {
       openVisitBtn = $('.record__button'),
       closeVisitBtn = $('.modal__visit-close'),
       closeCallbackBtn = $('.modal__callback-close'),
+      closeThanksBtn = $('.modal__thanks-close'),
       scrollUp = $('.page-scroll__up'),
-      month = $('.month');
+      modalThanks = $('.modal__thanks');
 
   // open address list
   openAddress.on('click', function () {
@@ -82,6 +83,28 @@ $(document).ready(function () {
     } 
   });
 
+
+  // modal__Thanks
+  // close modal__Thanks
+  closeThanksBtn.on('click', function () {
+    modalThanks.removeClass('modal__thanks--visible')
+  });
+
+  // close modal__Thanks onclick out modal
+  $(document).mouseup(function (e) {
+    if (modalThanks.has(e.target).length === 0) {
+      modalThanks.removeClass('modal__thanks--visible')
+    }
+  });
+
+  // close modal__Thanks onclick key esc
+  $(document).keydown(function (e) {
+    if (e.which === 27) {
+      modalThanks.removeClass('modal__thanks--visible')
+    } 
+  });
+  
+
   // slaiders
   // инициализация 1 слайдера
   var mySwiper = new Swiper ('.hero__swiper', {
@@ -121,6 +144,7 @@ $(document).ready(function () {
     // If we need pagination
     pagination: {
       el: '.gallery__pagination',
+      clickable: true,
     },
 
     // Navigation arrows
@@ -163,13 +187,13 @@ $(document).ready(function () {
   });
 
   // choice month for registration
-  for (let i=0; i<month.length; i++){
-    $(month[i]).click(function(e) {
-      e.preventDefault();
-      $(".month.active").removeClass('active');
-      $(this).addClass('active');
-    });
-  }
+  // for (let i=0; i<month.length; i++){
+  //   $(month[i]).click(function(e) {
+  //     e.preventDefault();
+  //     $(".month.active").removeClass('active');
+  //     $(this).addClass('active');
+  //   });
+  // }
 
   // show * in placeholder
   $('#cards__name').focus(function() {
@@ -228,11 +252,11 @@ $(document).ready(function () {
           console.log('Ajax сработал. Ответ сервера: ' + response);
           $(form)[0].reset();
           modalVisit.removeClass('modal__visit--visible');
-          // modalThanks.toggleClass('modal-thanks--visible')
+          modalThanks.toggleClass('modal__thanks--visible')
         },
-        // error: function (response) {
-        //   console.error('Ошибка запроса ' + response)
-        // }
+        error: function (response) {
+          console.error('Ошибка запроса ' + response)
+        }
       });
     }
   });
@@ -275,11 +299,59 @@ $(document).ready(function () {
           console.log('Ajax сработал. Ответ сервера: ' + response);
           $(form)[0].reset();
           modalCallback.removeClass('modal__callback--visible');
-          // modalThanks.toggleClass('modal-thanks--visible')
+          modalThanks.toggleClass('modal__thanks--visible')
         },
-        // error: function (response) {
-        //   console.error('Ошибка запроса ' + response)
-        // }
+        error: function (response) {
+          console.error('Ошибка запроса ' + response)
+        }
+      });
+    }
+  });
+
+
+  // validation third form
+  $(".register__form").validate({
+    errorClass: "invalid",
+    errorElement: "div",
+    rules: {
+      name: {
+        required: true,
+        minlength: 2,
+        maxlength: 25
+    },
+      tel:  {
+        required: true,
+        minlength: 17
+    },
+      policy: "required",
+
+    },
+    messages: {
+      name: {
+        required: "Введите Ваше имя",
+        minlength: "Минимум два символа",
+        maxlength: "Не допустимая длина имени"
+      },
+      tel: {
+        required: "Введите ваш номер телефона",
+        minlength: "Заполните номер полностью"
+      },
+      policy: "Необходимо дать согласие на обработку данных"
+    },
+    submitHandler: function(form) {
+      $.ajax({
+        type: "POST",
+        url: "sendVisit.php",
+        data: $(form).serialize(),
+        success: function (response) {
+          console.log('Ajax сработал. Ответ сервера: ' + response);
+          $(form)[0].reset();
+          modalVisit.removeClass('modal__visit--visible');
+          modalThanks.toggleClass('modal__thanks--visible')
+        },
+        error: function (response) {
+          console.error('Ошибка запроса ' + response)
+        }
       });
     }
   });
@@ -322,12 +394,12 @@ $(document).ready(function () {
         success: function (response) {
           console.log('Ajax сработал. Ответ сервера: ' + response);
           $(form)[0].reset();
-          // modalCallback.removeClass('modal__callback--visible');
-          // modalThanks.toggleClass('modal-thanks--visible')
+          modalCallback.removeClass('modal__callback--visible');
+          modalThanks.toggleClass('modal__thanks--visible')
         },
-        // error: function (response) {
-        //   console.error('Ошибка запроса ' + response)
-        // }
+        error: function (response) {
+          console.error('Ошибка запроса ' + response)
+        }
       });
     }
     
