@@ -37,7 +37,7 @@ function serveSass(done) {
 
 function buildCSS(done) {
   src('css/**/**.css')
-    .pipe(dest('dist/css/'));
+    .pipe(dest('../../dist/clubMozaika/css/'));
   done();
 }
 
@@ -50,34 +50,34 @@ function buildjs(done) {
       ignoreFiles: ['*.min.js'],
       noSource: true
     }))
-    .pipe(dest('dist/js/'))
+    .pipe(dest('../../dist/clubMozaika/js/'))
   done();
 }
 
 function buildHTML(done) {
   src(['**.html', '!thanks.html'])
     .pipe(htmlmin({ collapseWhitespace: true} ))
-    .pipe(dest('dist/'));
+    .pipe(dest('../../dist/clubMozaika/'));
   done();
 }
 
 function php(done) {
   src('**.php')
-    .pipe(dest('dist/'));
+    .pipe(dest('../../dist/clubMozaika/'));
   src('phpmailer/**.php')
-  .pipe(dest('dist/phpmailer'));
+  .pipe(dest('../../dist/clubMozaika/phpmailer'));
   done();
 }
 
 function fonts(done) {
   src('fonts/**/**')
-    .pipe(dest('dist/fonts'));
+    .pipe(dest('../../dist/clubMozaika/fonts'));
   done();
 }
 
 function img(done) {
   src('img/**/**')
-    .pipe(dest('dist/img'));
+    .pipe(dest('../../dist/clubMozaika/img'));
   done();
 }
 

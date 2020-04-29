@@ -37,7 +37,7 @@ function serveSass(done) {
 
 function buildCSS(done) {
   src('css/**/**.css')
-    .pipe(dest('dist/css/'));
+    .pipe(dest('../../dist/clubSchelkovo/css/'));
   done();
 }
 
@@ -50,34 +50,34 @@ function buildjs(done) {
       ignoreFiles: ['*.min.js'],
       noSource: true
     }))
-    .pipe(dest('dist/js/'))
+    .pipe(dest('../../dist/clubSchelkovo/js/'))
   done();
 }
 
 function buildHTML(done) {
   src(['**.html', '!thanks.html'])
     .pipe(htmlmin({ collapseWhitespace: true} ))
-    .pipe(dest('dist/'));
+    .pipe(dest('../../dist/clubSchelkovo/'));
   done();
 }
 
 function php(done) {
   src('**.php')
-    .pipe(dest('dist/'));
+    .pipe(dest('../../dist/clubSchelkovo/'));
   src('phpmailer/**.php')
-  .pipe(dest('dist/phpmailer'));
+  .pipe(dest('../../dist/clubSchelkovo/phpmailer'));
   done();
 }
 
 function fonts(done) {
   src('fonts/**/**')
-    .pipe(dest('dist/fonts'));
+    .pipe(dest('../../dist/clubSchelkovo/fonts'));
   done();
 }
 
 function img(done) {
   src('img/**/**')
-    .pipe(dest('dist/img'));
+    .pipe(dest('../../dist/clubSchelkovo/img'));
   done();
 }
 
