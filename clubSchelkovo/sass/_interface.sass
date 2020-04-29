@@ -1,0 +1,191 @@
+// main button
+.button
+  padding: 1.145rem 1.714rem
+  font-size: 0.857rem
+  font-weight: bold
+  text-transform: uppercase
+  color: $black
+  border: none
+  border-radius: 1.6rem
+  cursor: pointer
+.button--main
+  background-color: $mainColor
+.link
+  text-decoration: none
+.title
+  position: relative
+  font-size: 2rem
+  font-weight: normal
+  text-transform: uppercase
+  color: $text
+  text-align: center
+.title--before
+  &::before
+    position: absolute
+    bottom: -1rem
+    left: 50%
+    transform: translateX(-50%)
+    content: ''
+    width: 6.214rem
+    height: 2px
+    background-color: $mainColor
+.title--light
+  color: $light
+.input
+  padding: 1.4rem
+  max-height: 3.214rem
+  font-size: 0.95rem
+  font-family: 'Roboto', sans-serif
+  color: $text
+  border-radius: 1.65rem
+  border: 0
+.swiper-button-prev,.swiper-button-next
+  width: 2.571rem
+  height: 2.571rem
+  border-radius: 50%
+  &::after
+    content: ''
+.swiper-button-prev
+  background: $mainColor url(../img/services/prev.png) no-repeat center / 0.4rem
+.swiper-button-next
+  background: $mainColor url(../img/services/next.png) no-repeat center / 0.4rem
+.swiper-pagination-bullet
+  width: 1.571rem
+  height: 0.285rem
+  border-radius: 0.214rem
+  background-color: $light
+  opacity: 1
+  &::hover
+    background-color: $mainColor
+  &-active
+    background-color: $mainColor
+.list-clubs__wrap
+  .choice-address
+    position: relative
+    margin-bottom: 1rem
+  input
+    appearance: none
+    position: absolute
+    height: 0
+    width: 0
+  a
+    text-decoration: none
+  label
+    cursor: pointer
+  .custom-check
+    position: absolute
+    margin-left: -2rem
+    width: 1.5rem
+    height: 1.5rem
+    border: 1px solid #b7b7b7
+    border-radius: 0.357rem
+    background-color: #fff
+  input[type=checkbox]:checked ~ label > .custom-check
+    background: $mainColor url(../img/header/check.png) no-repeat center / 0.8rem
+  input[type=radio]:checked + label > .custom-check
+    background: $mainColor url(../img/header/check.png) no-repeat center / 0.8rem
+  label
+    position: relative
+    text-transform: uppercase
+    strong
+      display: block
+.call
+  color: $light
+  font-size: 0.857rem
+  &__link
+    color: $light
+    text-decoration: none
+    font-size: 1.357rem
+    font-weight: bold
+  &__text
+    margin: 0
+    font-weight: lighter
+
+// модфльные окна
+.modal
+  opacity: 0
+  visibility: hidden
+  position: fixed
+  left: 0
+  top: 0
+  bottom: 0
+  right: 0
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 100%
+  height: 100%
+  background-color: rgba($black, 0.6)
+  z-index: 99
+  transition: all 200ms ease
+  &__dialog
+    background-color: $modal
+    position: relative
+    z-index: 199
+  &__close
+    position: absolute
+    top: -1.35rem
+    right: -1.35rem
+    padding: 0
+    width: 1.3rem
+    height: 1.3rem
+    border: none
+    background: transparent url(../img/modal/close-btn.png) no-repeat center
+    cursor: pointer
+  &__title
+    background-color: $mainColor
+    margin: 0
+    padding: 1.5rem
+    font-size: 1.3rem
+    font-weight: bold
+  &__form
+    padding: 1.857rem 2.571rem
+  .input-group
+    display: flex
+    flex-direction: column
+    align-items: center
+  &__input
+    margin-bottom: 1rem
+    width: 100%
+    width: 19.142rem
+    &::placeholder
+      font-size: 0.928rem
+  .input__wrap
+    position: relative
+  .validate +
+    div[id$=error]
+      position: absolute
+      bottom: 0
+      left: 0
+      color: red
+      z-index: 10
+  .validate +
+    div[id=policy-error]
+      left: -6.3rem
+      bottom: -1rem
+      width: 24rem
+  &__policy
+    position: relative
+    margin: auto
+    margin-bottom: 1.357rem
+    max-width: 10.714rem
+    label
+      font-size: 0.785rem
+      color: $light
+  &__button
+    display: block
+    margin: auto
+.page-scroll
+  &__up
+    position: fixed
+    right: 3rem
+    bottom: 7rem
+    width: 2.857rem
+    height: 0
+    border-radius: 50%
+    background: $mainColor url(../img/up-arrow.svg) no-repeat center / 1.6rem
+    transition: height 100ms ease, transform 200ms linear
+    transform: rotate(-10deg)
+    &:hover
+      transform: rotate(0)
+      
